@@ -1,0 +1,65 @@
+spring:
+  profiles.active: qa
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-Class-Name: com.mysql.jdbc.Driver
+    password: Abhi@12345
+    url: jdbc:mysql://localhost:3306/Abhidb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Hi I am Abhishek;
+
+---
+
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-Class-Name: com.mysql.jdbc.Driver
+    password: Abhi@12345
+    url: jdbc:mysql://localhost:3306/Abhidb-qa
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Hi I am Abhishek;
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-Class-Name: com.mysql.jdbc.Driver
+    password: Abhi@12345
+    url: jdbc:mysql://localhost:3306/Abhidb-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Hi I am Abhishek;
